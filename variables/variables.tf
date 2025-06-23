@@ -22,3 +22,13 @@ variable "sg_name" {
   default = "allow-all"
 
 }
+
+variable "num_from_port" {
+  default = "0"
+
+}
+
+variable "num_to_port" {
+  default = "0"
+
+}
