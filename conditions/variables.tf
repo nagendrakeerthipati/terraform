@@ -34,6 +34,6 @@ variable "num_to_port" {
 }
 
 variable "enviroment" {
-  default = "dev"
+  default = "test"
 
 }
