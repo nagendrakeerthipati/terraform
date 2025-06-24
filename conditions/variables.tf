@@ -13,7 +13,7 @@ variable "instance_type" {
 variable "tags" {
   type = map(string)
   default = {
-    Name = "Helloworld"
+    Name = "roboshop"
   }
 
 }
@@ -35,5 +35,10 @@ variable "num_to_port" {
 
 variable "enviroment" {
   default = "test"
+
+}
+
+variable "instances" {
+
 
 }
