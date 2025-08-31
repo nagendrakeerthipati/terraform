@@ -13,13 +13,13 @@ variable "instance_type" {
 variable "tags" {
   type = map(string)
   default = {
-    Name = "roboshop"
+    Name = "Helloworld"
   }
 
 }
 
 variable "sg_name" {
-  default = "allow-all"
+  #default = "allow-all"
 
 }
 
@@ -33,12 +33,19 @@ variable "num_to_port" {
 
 }
 
-variable "enviroment" {
-  default = "test"
-
+variable "cidr_blocks" {
+  type    = list(string)
+  default = ["0.0.0.0/0"]
 }
 
-variable "instances" {
+variable "sg_tags" {
+  default = {
+    Name = "allow_all"
+  }
+}
 
+
+variable "enviroment" {
+  default = "dev"
 
 }

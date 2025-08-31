@@ -1,5 +1,5 @@
 resource "aws_instance" "roboshop" {
-  ami                    = var.ami_id
+  ami                    = var.ami_id #left and rightside 
   instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.allow_all.id]
 
@@ -15,7 +15,7 @@ resource "aws_security_group" "allow_all" {
     from_port        = var.num_from_port
     to_port          = var.num_to_port
     protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
+    cidr_blocks      = var.cidr_blocks
     ipv6_cidr_blocks = ["::/0"]
   }
 
@@ -23,12 +23,10 @@ resource "aws_security_group" "allow_all" {
     from_port        = var.num_from_port
     to_port          = var.num_to_port
     protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
+    cidr_blocks      = var.cidr_blocks
     ipv6_cidr_blocks = ["::/0"]
   }
 
 
-  tags = {
-    Name = "allow_all"
-  }
+  tags = var.sg_tags
 }

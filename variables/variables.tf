@@ -19,7 +19,7 @@ variable "tags" {
 }
 
 variable "sg_name" {
-  default = "allow-all"
+  #default = "allow-all"
 
 }
 
@@ -32,3 +32,15 @@ variable "num_to_port" {
   default = "0"
 
 }
+
+variable "cidr_blocks" {
+  type    = list(string)
+  default = ["0.0.0.0/0"]
+}
+
+variable "sg_tags" {
+  default = {
+    Name = "allow_all"
+  }
+}
+
