@@ -44,3 +44,9 @@ variable "sg_tags" {
   }
 }
 
+variable "enviroment" {
+  default = {
+    Name = "dev"
+  }
+
+}
